@@ -1,0 +1,89 @@
+#root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: none;
+  text-align: center;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+/* Remove logo and card styles, keep only essentials */
+.schema-builder-link {
+  margin-right: 1em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.project-title {
+  font-family: 'Montserrat', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #23272f;
+  letter-spacing: 2.5px;
+  text-shadow: 0 2px 12px rgba(58,123,213,0.08);
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+  transition: font-size 0.2s, color 0.5s;
+}
+
+.project-title.dark,
+:root.dark .project-title {
+  color: #f5f7fa;
+  text-shadow: 0 2px 12px rgba(58,123,213,0.18);
+}
+
+nav.dark,
+:root.dark nav {
+  background: #23272f !important;
+  color: #f5f7fa;
+  box-shadow: 0 2px 12px #181a2033;
+}
+
+.nav-bold {
+  font-family: 'Montserrat', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.18rem;
+  letter-spacing: 1px;
+  color: #23272f;
+  text-decoration: none;
+  padding: 0.3rem 1.2rem;
+  border-radius: 8px;
+  background: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-bold.dark,
+:root.dark .nav-bold {
+  color: #f5f7fa;
+}
+
+.nav-bold:hover {
+  background: #e0e7ef;
+  color: #3a7bd5;
+}
+
+:root.dark .nav-bold:hover {
+  background: #3a7bd5;
+  color: #fff;
+}
+
+.nav-gap {
+  margin-left: 2.2rem;
+}
+
+.animated-input  {
+  margin-right: 1em;
+}
+
+.query-input{
+  min-width: 25vw;
+}
+
+@media (max-width: 600px) {
+  .project-title {
+    font-size: 1.5rem;
+  }
+}
