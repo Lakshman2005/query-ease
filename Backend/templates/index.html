@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV Plotter</title>
+</head>
+<body>
+    <h2>CSV String Input</h2>
+    <form method="POST">
+        <textarea name="csv_text" rows="10" cols="80">{{ csv_text }}</textarea><br><br>
+
+        {% if columns %}
+            <label>Plot Type:</label>
+            <select name="plot_type">
+                {% for pt in ['bar', 'line', 'scatter', 'box', 'violin', 'hist', 'kde', 'pie'] %}
+                    <option value="{{ pt }}" {% if pt == selected_plot %}selected{% endif %}>{{ pt }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label>X-axis:</label>
+            <select name="x_axis">
+                {% for col in columns %}
+                    <option value="{{ col }}" {% if col == x_axis %}selected{% endif %}>{{ col }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label>Y-axis (optional):</label>
+            <select name="y_axis">
+                <option value="">-- None --</option>
+                {% for col in columns %}
+                    <option value="{{ col }}" {% if col == y_axis %}selected{% endif %}>{{ col }}</option>
+                {% endfor %}
+            </select><br><br>
+        {% endif %}
+
+        <button type="submit">Generate Plot</button>
+    </form>
+
+    {% if plot %}
+        <h3>Generated Plot:</h3>
+        <img src="data:image/png;base64,{{ plot }}">
+    {% endif %}
+</body>
+</html>
